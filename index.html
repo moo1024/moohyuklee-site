@@ -259,7 +259,7 @@ footer p b{color:#fff}
     <p class="motto">“다시 정의하고, 굴러가게 만든다.”<span>Redefine the problem — then make it run. Every project I've done follows that order.</span></p>
     <div class="hero-ctas">
       <a class="btn primary" href="#pattern">See how I work</a>
-      <a class="btn ghost" href="mailto:dlangur1024@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="#contact">Get in touch ↓</a>
     </div>
   </div>
   <div class="term rv">
@@ -493,7 +493,7 @@ footer p b{color:#fff}
       archive · applying to bring a <b>Claude Builder Club</b> to Kyungpook National University.</p>
     </div>
     <div class="foot-links rv">
-      <a href="mailto:dlangur1024@gmail.com">✉&nbsp; dlangur1024@gmail.com</a>
+      <a href="#contact" id="copyEmail" role="button" title="클릭하면 복사됩니다">✉&nbsp; dlangur1024@gmail.com <span id="copied" style="color:#5BBF7A; font-size:13px; opacity:0; transition:opacity .3s">&nbsp;copied ✓</span></a>
       <a href="https://www.linkedin.com/in/moohyuklee" target="_blank" rel="noopener">in&nbsp; linkedin.com/in/moohyuklee</a>
       <a href="#top">↑&nbsp; Back to top</a>
     </div>
@@ -565,5 +565,15 @@ const co = new IntersectionObserver(es=>{
   });
 },{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* ---------- copy email ---------- */
+const ce = document.getElementById('copyEmail');
+if (ce) ce.addEventListener('click', (e)=>{
+  e.preventDefault();
+  navigator.clipboard.writeText('dlangur1024@gmail.com').then(()=>{
+    const c=document.getElementById('copied'); c.style.opacity=1;
+    setTimeout(()=>c.style.opacity=0, 1800);
+  });
+});
 </script>
 </body></html>
